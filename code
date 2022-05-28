@@ -1,0 +1,36 @@
+Given a string S from which your task is to find the secret code. The secret code can be
+derived using following steps –
+1. Find the length of S.
+2. Find total upper characters in S.
+3. Find total lower characters in S.
+4. Find the highest digit (number) in S.
+5. Add Results of Step 2, 3 and 4.
+6. Concatenate Step 1 and Step 5 result.
+7. Append first and last character of S at the beginning of Step 6 result.
+For example: If the input String S = “ABCabc1234” then expected output is A41010.
+Write python logic for the same. The following are the guidelines -
+1. Receive input S from the user using input() function.
+2. Find the expected output and print.
+
+
+
+a="ABCabs1234"
+c=len(a)
+i=0
+u=0
+l=0
+list=[]
+for i in range (0,c):
+    if a[i].isupper():
+        u=u+1
+    elif a[i].islower():
+        l=l+1
+    else:
+        b=int(a[i])
+        list.append(b)
+maximum=max(list)
+res=u+l+maximum
+print (res)
+sum=str(c)+str(res)
+print(a[0]+a[c-1]+sum)
+        
